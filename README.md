@@ -1,1 +1,6 @@
-# wordle_usernames42
+## USAGE ##
+cd ./woedle42 && ng serve
+
+## REQUIRED DEPENDENCIES ##
+- npm
+- angular
