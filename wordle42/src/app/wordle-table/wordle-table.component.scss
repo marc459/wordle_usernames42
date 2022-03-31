@@ -1,0 +1,20 @@
+#word{
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.redfailed{
+  color: red;
+}
+
+.greenguessed{
+  color: green;
+}
+
+.orangeranged{
+  color: orange;
+}
