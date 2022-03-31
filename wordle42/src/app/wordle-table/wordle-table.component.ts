@@ -11,7 +11,6 @@ import users42 from '../../assets/json/users.json'
 })
 export class WordleTableComponent implements OnInit , AfterViewInit{
   sentword: string = ""
-  fruits: string[] = ['manzana', 'naranja', 'banana'];
   podiumword: string
   splitword: string[][] = []
   num: number = 0
@@ -26,7 +25,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
 
   constructor(private pokemonService: PokemonService) {
     pokemonService = this.pokemonService;
-    this.podiumword = this.users[this.getRndInteger(0,this.fruits.length - 1)]
+    this.podiumword = this.users[this.getRndInteger(0,this.users.length - 1)]
     this.successcount = 0
     this.attempts = 0
     console.log(this.podiumword)
