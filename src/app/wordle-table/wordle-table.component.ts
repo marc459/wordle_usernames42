@@ -28,7 +28,6 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
     this.podiumword = this.users[this.getRndInteger(0,this.users.length - 1)]
     this.successcount = 0
     this.attempts = 0
-    console.log(this.podiumword)
   }
 
   ngOnInit(): void {
@@ -52,7 +51,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
       }
       else if(this.attempts >= 5)
       {
-        this.alert = "YOU LOST";
+        this.alert = "YOU LOST, THE WINNING LOGIN WAS <" + this.podiumword.toUpperCase() +">";
         this.attempts = 7;
         this.splitword[this.num++] = this.sentword.split('')
       }

@@ -1,6 +1,6 @@
 ## USAGE ON DEVELOPMENT ##
 
-cd ./woedle42 && ng serve
+cd ./wordle42 && ng serve
 
 ## REQUIRED DEPENDENCIES ##
 

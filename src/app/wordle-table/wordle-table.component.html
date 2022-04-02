@@ -1,3 +1,4 @@
+
 <h2>{{ alert }}</h2>
 <div  id="word" *ngFor="let word of splitword; let j=index;">
   <div *ngFor="let letter of splitword[j]; let i=index;" [ngClass]="{
@@ -10,3 +11,4 @@
 </div>
 <input type="text" [(ngModel)]="sentword"  (keyup.enter)="validate()" maxlength="{{podiumword.length}}"  autofocus/>
 <button type="submit"  (click)="validate()"  >Enviar</button>
+
