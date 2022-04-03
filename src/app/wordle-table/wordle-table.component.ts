@@ -61,7 +61,6 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
         this.alert = "KEEP TRYING"
         this.splitword[this.num++] = this.sentword.split('')
       }
-      this.alert= ""+this.sentword.length;
       this.attempts++;
 
     }
