@@ -41,6 +41,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
   {
     if(this.attempts < 6)
     {
+
       if(this.sentword.length != this.podiumword.length)
         this.alert= "WRITE A WORD WITH " + this.podiumword.length + " LENGTH"
       else if(this.sentword == this.podiumword)
@@ -60,6 +61,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
         this.alert = "KEEP TRYING"
         this.splitword[this.num++] = this.sentword.split('')
       }
+      this.alert= ""+this.sentword.length;
       this.attempts++;
 
     }
