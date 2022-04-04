@@ -45,7 +45,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
   {
     if(this.attempts < 6)
     {
-
+      
       if(this.sentword.length != this.podiumword.length)
         this.alert= "WRITE A WORD WITH " + this.podiumword.length + " LENGTH"
       else if(this.sentword.toLowerCase() == this.podiumword.toLowerCase())

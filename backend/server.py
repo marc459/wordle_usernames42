@@ -9,6 +9,13 @@ cursor = connection.cursor()
 
 app = Flask(__name__)
 
+@app.route("/api/users/<id>", methods=["GET"])
+def get_users(id):
+    row = cursor.execute(f"SELECT * FROM users WHERE login = '{id}'")
+    if len(row.fetchall()) == 0:
+        return {"query": "false"}
+    return {"query": "true"}
+
 @app.route("/api/user", methods=["GET"])
 def get_user() -> {}:
     if os.environ["today"] != str(date.today()):
