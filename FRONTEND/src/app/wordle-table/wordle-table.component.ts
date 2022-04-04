@@ -29,7 +29,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
     this.api42Service.getRandomUser().subscribe((data: any) =>{
       this.podiumword = data.login;
     })
-    this.podiumword = this.users[this.getRndInteger(0,this.users.length - 1)]
+    //this.podiumword = this.users[this.getRndInteger(0,this.users.length - 1)]
     this.successcount = 0
     this.attempts = 0
   }
@@ -48,7 +48,7 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
 
       if(this.sentword.length != this.podiumword.length)
         this.alert= "WRITE A WORD WITH " + this.podiumword.length + " LENGTH"
-      else if(this.sentword == this.podiumword)
+      else if(this.sentword.toLowerCase() == this.podiumword.toLowerCase())
       {
         this.alert = "YOU WON";
         this.attempts = 7;
@@ -64,9 +64,9 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
       {
         this.alert = "KEEP TRYING"
         this.splitword[this.num++] = this.sentword.split('')
+        this.attempts++;
       }
-      this.attempts++;
-
+      this.sentword = "";
     }
 
   }
