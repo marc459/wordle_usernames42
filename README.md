@@ -16,7 +16,7 @@ See it in https://localhost:4200
 
 ## RUN ON PRODUCTION ##
 
-npm run heroku-postproduction
+npm run heroku-postbuild
 
 npm run start
 
