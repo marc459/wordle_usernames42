@@ -1,9 +1,12 @@
 ## DEMO APP ON PRODUCTION ##
+
 https://wordle42.herokuapp.com/
 
 ## USAGE ON DEVELOPMENT ##
 
-cd ./wordle42 && ng serve
+ng serve
+
+See it in https://localhost:4200
 
 ## REQUIRED DEPENDENCIES ##
 
@@ -13,7 +16,11 @@ cd ./wordle42 && ng serve
 
 ## RUN ON PRODUCTION ##
 
-run "ng build --prod" AND copy wordle42/dist/* IN servNode/src AND node servNode/server.js
+npm run heroku-postproduction
+
+npm run start
+
+See it in https://localhost:3001
 
 ## NPM MODULES ##
 - express
