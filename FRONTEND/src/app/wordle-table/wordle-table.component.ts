@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AfterViewInit} from '@angular/core';
-import { PokemonService } from '../services/pokemon.service';
+import { Api42Service } from '../services/api42.service';
 import users42 from '../../assets/json/users.json'
+
 
 
 @Component({
@@ -23,8 +24,11 @@ export class WordleTableComponent implements OnInit , AfterViewInit{
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
-  constructor(private pokemonService: PokemonService) {
-    pokemonService = this.pokemonService;
+  constructor(private api42Service: Api42Service) {
+    api42Service = this.api42Service;
+    this.api42Service.getRandomUser().subscribe((data: any) =>{
+      this.podiumword = data.login;
+    })
     this.podiumword = this.users[this.getRndInteger(0,this.users.length - 1)]
     this.successcount = 0
     this.attempts = 0

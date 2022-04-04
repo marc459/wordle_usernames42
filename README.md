@@ -4,7 +4,7 @@ https://wordle42.herokuapp.com/
 
 ## USAGE ON DEVELOPMENT ##
 
-ng serve
+cd ./FRONTEND && ng serve
 
 See it in https://localhost:4200
 
@@ -15,6 +15,8 @@ See it in https://localhost:4200
 - angular
 
 ## RUN ON PRODUCTION ##
+
+cd ./FRONTEND
 
 npm run heroku-postbuild
 
