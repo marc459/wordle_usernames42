@@ -33,9 +33,9 @@ See it in https://localhost:3001
 
 ## UPLOAD CONTENTS TO HEROKU SERVER ##
 
-git subtree push --prefix FRONTEND heroku master
+git remote add heroku https://git.heroku.com/wordle42.git &&git subtree push --prefix FRONTEND heroku master
 
-git subtree push --prefix backend heroku master
+git remote add herokuback2 https://git.heroku.com/wordle42-back.git && git subtree push --prefix BACKEND herokuback2 master
 
 ## BACKEND MADE WITH 42 API LIBRARY ##
 
