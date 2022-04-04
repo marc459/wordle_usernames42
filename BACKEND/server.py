@@ -5,7 +5,6 @@ from flask import Flask
 from datetime import date
 from flask_cors import CORS
 
-
 import os
 import sqlite3
 import json
@@ -16,11 +15,6 @@ CORS(app)
 payload = {
     "filter[primary_campus_id]":campus_id
 }
-
-# payload2 = {
-#     "filter[name]": "Madrid"
-# }
-
 
 ic.progress_bar=True
 #usersdata = ic.pages_threaded("users", params=payload)
