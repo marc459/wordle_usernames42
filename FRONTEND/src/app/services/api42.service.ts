@@ -6,14 +6,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 })
 export class Api42Service {
 
-  private url:string = "https://backend-42-wordle.herokuapp.com/";
+  private url:string = "http://localhost:5000/";
   constructor(private http: HttpClient) { }
 
   getRandomUser()
   {
     let header = new HttpHeaders().set('Type-content', 'aplication/json')
 
-    return(this.http.get(`${this.url}api/user`, {
+    return(this.http.get(`${this.url}api/users`, {
       headers: header
     }));
   }

@@ -1,5 +1,7 @@
 
-<h2>{{ alert }}</h2>
+<h2>{{ alert }}<br>
+  <img src="{{usrimg}}" width="200"alt="">
+</h2>
 <div  id="word" *ngFor="let word of splitword; let j=index;">
   <div *ngFor="let letter of splitword[j]; let i=index;" [ngClass]="{
     redfailed: letter.toLowerCase() != podiumword.charAt(i).toLowerCase(),

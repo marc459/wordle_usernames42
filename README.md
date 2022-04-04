@@ -4,15 +4,9 @@ https://wordle42.herokuapp.com/
 
 ## USAGE ON DEVELOPMENT ##
 
-## FRONTEND ##
-cd ./FRONTEND && ng serve
+make
 
 See it in https://localhost:4200
-
-## BACKEND ##
-
-python3 get_campus_users.py
-
 
 
 ## REQUIRED DEPENDENCIES ##
@@ -21,17 +15,16 @@ python3 get_campus_users.py
 
 - angular
 
+- python3
+
 ## RUN ON PRODUCTION ##
 
 cd ./FRONTEND
 
-npm run heroku-postbuild
-
-npm run start
-
 See it in https://localhost:3001
 
 ## NPM MODULES ##
+
 - express
 
 - path

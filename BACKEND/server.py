@@ -3,12 +3,17 @@ from intra import ic
 from config import campus_id
 from flask import Flask
 from datetime import date
+from flask_cors import CORS
+
+
+
 
 import os
 import sqlite3
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 payload = {
     "filter[primary_campus_id]":campus_id
