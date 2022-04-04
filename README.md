@@ -1,3 +1,6 @@
+## DEMO APP ON PRODUCTION ##
+https://wordle42.herokuapp.com/
+
 ## USAGE ON DEVELOPMENT ##
 
 cd ./wordle42 && ng serve
