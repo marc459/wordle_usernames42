@@ -1,32 +1,47 @@
+
+from intra import ic
+from config import campus_id
 from flask import Flask
 from datetime import date
 
 import os
 import sqlite3
-
-connection = sqlite3.connect("users.db", check_same_thread=False)
-cursor = connection.cursor()
+import json
 
 app = Flask(__name__)
 
-@app.route("/api/users/<id>", methods=["GET"])
-def get_users(id):
-    row = cursor.execute(f"SELECT * FROM users WHERE login = '{id}'")
-    if len(row.fetchall()) == 0:
-        return {"query": "false"}
-    return {"query": "true"}
+payload = {
+    "filter[primary_campus_id]":campus_id
+}
 
-@app.route("/api/user", methods=["GET"])
-def get_user() -> {}:
-    if os.environ["today"] != str(date.today()):
-        os.environ["login"] = cursor.execute("SELECT login FROM users ORDER BY RANDOM() LIMIT 1;").fetchone()[0]
-        os.environ["today"] = date.today()
-    return {
-        "login": os.environ["login"]
-    }
+# payload2 = {
+#     "filter[name]": "Madrid"
+# }
+
+
+
+ic.progress_bar=True
+#usersdata = ic.pages_threaded("users", params=payload)
+usersdata = ic.get("users")
+#teamsdata = ic.pages_threaded("campus", params=payload2)
+teamsdata = ic.get("campus")
+
+@app.route("/api/users", methods=["GET"])
+def get_users():
+    if usersdata.status_code == 200:
+        data = usersdata.json()
+        return json.dumps(data)
+
+            
+
+@app.route("/api/campus", methods=["GET"])
+def get_teams():
+    if teamsdata.status_code == 200:
+        data = teamsdata.json()
+        return json.dumps(data)
 
 if __name__ == "__main__":
-    os.environ["today"] = str(date.today())
-    os.environ["login"] = cursor.execute("SELECT login FROM users ORDER BY RANDOM() LIMIT 1;").fetchone()[0]
-
     app.run(host = "0.0.0.0", port = 5000)
+
+
+
