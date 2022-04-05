@@ -10,8 +10,8 @@ import sqlite3
 import json
 
 
-if __name__ == "__main__":
-    app = Flask(__name__)
+
+app = Flask(__name__)
 CORS(app)
 
 payload = {
@@ -36,9 +36,9 @@ def get_teams():
         data = teamsdata.json()
         return json.dumps(data)
 
-# if __name__ == "__main__":
-#     app.run(host = "0.0.0.0", port = 5000)
-
 @app.route("/", methods=["GET"])
 def index():
     return "<h1>Hello, world!</h1>"
+
+if __name__ == "__main__":                  
+    app.run(host = "0.0.0.0", port = 5000)  #coment this for dply in heroku
