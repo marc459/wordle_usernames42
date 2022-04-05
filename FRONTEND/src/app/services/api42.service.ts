@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 })
 export class Api42Service {
 
-  private url:string = "https://backend-42-wordle.herokuapp.com/";
+  private url:string = "http://localhost:5000/";
   constructor(private http: HttpClient) { }
 
   getRandomUser()

@@ -27,7 +27,8 @@ teamsdata = ic.get("campus")
 
 @app.route("/api/users", methods=["GET"])
 def get_users() -> {}:
-    json_string = json.dumps(usersdata)
+    userobjs =  [obj for obj in usersdata if(obj['first_name'] != '3b3')] 
+    json_string = json.dumps(userobjs)
     return json_string
             
 @app.route("/api/campus", methods=["GET"])
